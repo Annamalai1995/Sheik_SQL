@@ -1,0 +1,99 @@
+create  table tablename (name varchar(20),age int);
+varchar --datatypes
+datatype:
+char(size)
+varchar(size)
+binary(size)
+int
+SQL SYNTAX:
+1.select * from tablename;
+2.select columnname from tablename;
+3.select columnname1,columnname2 from tablename where columnname;
+Ex:
+select empid,designation from stu where  salary=10000;
+select * from stu where state='Tamilnadu';
+Ex:
+select age from tablename;
+
+DDL-Data Defintion Language
+Operations:
+Create 
+Alter
+Drop
+Truncate
+DML-Data manipulation Language
+opeartion
+select
+insert
+update
+Delete
+
+TCL
+
+
+
+ a=10;--->
+Syntax:
+datatype variable name=value;
+10-int 
+sheik-char or String
+10.5-float
+968884522212-long
+
+Example:
+INT number =100;
+
+
+
+
+Variablename=
+number
+_number
+$number-not valid
+1245number-not valid
+num ber-not valid 
+num&ber
+
+
+SQLQUERY:
+create database Sheik;
+use Sheik;
+/*create table office(emp_id int not null,emp_name varchar(50) not null,Age int not null,Address char(45),salary int,primary key(emp_id));
+select * from office;
+select emp_id,emp_name from office;
+insert into office values(501,'Sathish',28,'salem',150000);
+select * from office;
+desc office;
+drop table office;*/
+
+-- DDLCOMMANDS
+create table office(emp_id int not null,emp_name varchar(50) not null,Age int not null,Address char(45),salary int,primary key(emp_id));
+desc office;
+alter table office add designation varchar(100);
+alter table office drop designation; 
+alter table office modify emp_name varchar(100);
+alter table office add column designation varchar(150);
+alter table office change Address Location varchar(100);
+rename table office to office_details;
+drop table office_details;
+
+-- DMLCOMMANDS
+insert into office values(101,'Sheik',35,'chennai',95000);
+select * from office;
+insert into office values(502,'Sathish',28,'Hyderabad',42000);
+insert into office values(503,'Venkat',30,'Trichy',25000);
+insert into office values(504,'Rajesh',27,'Bangalore',18500);
+insert into office values(505,'Priya',26,'chennai',15000);
+
+DML COMMANDS
+select * from office;
+update office set Address='coimbatore' where Address='Trichy';
+select * from office;
+update office set Age=30 where emp_name='Priya';
+select * from office;
+delete from office where Age=30;
+Truncate table office;
+
+
+
+
