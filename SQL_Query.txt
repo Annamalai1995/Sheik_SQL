@@ -96,4 +96,99 @@ Truncate table office;
 
 
 
+LIKE OPERATOR: using numbers or patterns filtering
+
+sheik--S i 
+wildcards:
+% zero or more character
+_  it returns only one character
+
+
+
+
+create table office_details(emp_id int primary key,emp_name varchar(50),designation varchar(150),salary int);
+insert into office_details values(501,'Annamalai','javadevloper',52000);
+insert into office_details values(502,'Sathish','Frontend',65000);
+insert into office_details values(503,'Priya','Backend',85000);
+insert into office_details values(504,'Deepika','Teamlead',95000);
+insert into office_details values(505,'Gowthami','HR',120000);
+insert into office_details values(506,'Rajesh','Sales',55000);
+insert into office_details values(507,'jayaprakash','AssociateEnginner',88000);
+insert into office_details values(508,'Raja','Admin',25000);
+insert into office_details values(509,'Mani','HR',45000);
+insert into office_details values(510,'Aaju','CEO',150000);
+insert into office_details values(511,'Kumar','Sales',35000);
+insert into office_details values(512,'karthick','HR',55000);
+insert into office_details values(513,'Arun','Admin',28000);
+insert into office_details values(514,'Mugil','Teamlead',95000);
+insert into office_details values(515,'vidhya','AssociateEngineer',105000);
+select * from office_details;
+select * from office_details where emp_name='Vidhya';
+
+select * from office_details where emp_name<>'Vidhya';
+
+select * from office_details where salary>50000;
+
+select * from office_details where salary>40000 AND designation='Teamlead';
+select * from office_details where salary<45000 AND designation='Teamlead';
+
+select * from office_details where designation='Admin' OR designation='HR';
+
+select * from office_details where designation IN('Admin','javadevloper','CEO');
+
+select * from office_details where designation Not in ('Admin','HR');
+
+
+select * from office_details where salary between 45000 AND 85000; 
+
+select * from office_details limit 6;
+select * from office_details where salary between 45000 AND 85000 limit 6; 
+
+select * from office_details where emp_name like 'A%';
+
+select * from office_details where emp_name not like 'A%';
+select * from office_details where emp_name  like 'A%A';
+select * from office_details where emp_name like 'D%A';
+
+select * from office_details where emp_name like '%i%';
+
+select * from office_details where emp_name like '__i%';
+select * from office_details;
+select * from office_details where emp_name like '___a%';
+ set sql_safe_updates=0;
+
+update office_details set designation='Developer' where  designation='AssociateEnginner';
+select * from office_details;
+
+
+><=<>
+And OR Not
+Truth table:
+ AND  GATES:
+A   B    C
+0    0     0
+0    1     0
+1    0      0
+1    1      1
+
+OR Gate:
+
+A   B    C
+0    0     0
+0    1     1
+1    0      1
+1    1      1
+
+
+
+
+select * from office_details where salary like '12%';
+
+
+
+
+
+
+
+
 
