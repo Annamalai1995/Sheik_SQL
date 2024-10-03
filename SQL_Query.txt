@@ -178,11 +178,101 @@ A   B    C
 0    1     1
 1    0      1
 1    1      1
-
-
-
-
 select * from office_details where salary like '12%';
+
+-- DISTINCTORDERBY CLAUSES
+
+select   designation from office_details;
+
+select distinct  designation from office_details;
+
+select  * from office_details order by emp_name;
+
+select  * from office_details order by salary;
+
+select * from office_details order by emp_name desc;
+select * from office_details order by salary desc;
+
+select * from office_details order  by salary,emp_name;
+
+select * from office_details  where designation='HR' order  by salary desc;
+
+select * from office_details  where designation='HR' order  by salary desc;
+
+select * from office_details order by designation;
+select * from office_details;
+select * from office_details order by ( case designation
+when 'CEO' THEN 1
+when 'HR' THEN 2
+when 'Admin' THEN 3
+else 50
+END
+);
+select * from office_details order by ( case designation
+when 'CEO' THEN 1
+when 'HR' THEN 2
+when 'Admin' THEN 3
+else 100
+END
+),emp_name;
+
+
+
+Math function
+select count(*) from office_details;
+select count(*) tablesdata from office_details;
+select count(*)howmanyHR from  office_details where designation='HR';
+select salary from office_details where designation='Admin';
+
+select avg(salary) from office_details where designation='Admin';
+
+select sum(salary) from office_details where designation='sales';
+
+select max(salary) from office_details where designation='Teamlead';
+select min(salary) from office_details where designation='sales';
+
+
+
+if(cond)
+{
+  stmt
+}
+else
+{
+stmts
+}
+
+
+switch(expression)
+{
+case value 'a'
+stmts 
+break;
+.
+.
+.
+.
+.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
