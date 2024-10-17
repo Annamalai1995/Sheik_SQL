@@ -95,7 +95,6 @@ delete from office where Age=30;
 Truncate table office;
 
 
-
 LIKE OPERATOR: using numbers or patterns filtering
 
 sheik--S i 
@@ -253,6 +252,52 @@ break;
 .
 .
 .}
+
+-- String Function
+select ucase(emp_name) from  office_details;
+select emp_name,char_length(emp_name) char_count
+from office_details;
+select designation,char_length(designation) char_count
+from office_details;
+
+select salary,concat('RS.',salary) from office_details;
+select salary,concat('Rs',format(salary,0)) from office_details;
+
+select  emp_name,designation from office_details;
+
+
+select  emp_name,LEFT(designation,3) from office_details;
+select  emp_name,mid(designation,4) from office_details;
+
+-- DATE AND FUNCIONS
+alter  table office_details add column joindate date;
+select * from office_details;
+
+update office_details set joindate="2024-10-07";
+
+select now();
+select date(now());
+select curdate();
+select date_format(curdate(),"%d/%m/%Y");
+select date_format(curdate(),"%d/%m/%y");
+select date_format(curdate(),"%d-%m-%Y")  date;
+
+select datediff(curdate(),"2025/10/07");
+
+select datediff(curdate(),"2025/10/07") AS COUNTDAYS;
+select date_add(curdate(),interval 2 day) as 'Two days after';
+select date_add(curdate(),interval 2 week) as 'Two days after';
+
+
+
+
+
+
+
+
+
+
+
 
 
 
