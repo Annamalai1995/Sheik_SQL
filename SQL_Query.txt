@@ -293,6 +293,31 @@ select date_add(curdate(),interval 2 week) as 'Two days after';
 
 
 
+-- GROUP BY AND HAVINg CLAUSES
+select * from office_details;
+select * from office_details order by designation;
+select designation,avg(salary) from office_details group by designation;
+select designation,count(emp_id) from office_details group by designation;
+select designation,salary from office_details;
+select designation,count(emp_id) from office_details group by designation;
+-- HAVING CLAUSE
+select designation,count(emp_id) from office_details group by designation having count(emp_id)>1;
+-- group by filters
+-- having using grp by filters
+select designation,count(emp_id) from office_details group by designation having count(emp_id)>1 order by designation;
+select * from office_details;
+select designation,count(emp_id) from office_details  where salary>50000 group by designation having count(emp_id)>1 order by designation;
+
+
+drop table office_details;
+constraints
+create table office_details(emp_id int primary key auto_increment,emp_name varchar(50) not null,designation varchar(150) default "plsassign",
+salary int,pan varchar(15) unique,check(salary>50000));
+desc office_details;
+insert into office_details(emp_name,salary)values('Annamalai',65000);
+select * from office_details;
+
+
 
 
 
