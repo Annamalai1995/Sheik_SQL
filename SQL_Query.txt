@@ -319,6 +319,38 @@ select * from office_details;
 
 
 
+-- ADDING CONSTRAINTS
+create table office_details(emp_id int primary key,emp_name varchar(50),designation varchar(150),salary int);
+-- adding not ull
+alter table office_details modify emp_name varchar(50) not null;
+-- drop not null constraints
+alter table office_details modify emp_name varchar(50) not null;
+-- add default constraints
+alter table office_details alter designation set default "plsasssign";
+-- Drop default
+alter table office_details alter column designation set  drop default;
+-- check constraint
+
+alter table office_details add check(salary>50000);
+alter table office_details add constraint ck_salary check (salary>50000);
+
+-- Drop check
+alter table office_details  drop check ck_salary;
+
+
+-- FOREIGNKEY
+create table Branches(bran_id int primary key auto_increment,
+bran_name varchar(50) not null,location varchar(50)
+);
+drop table Branches;
+
+create table office_details(emp_id int primary key auto_increment,
+emp_name varchar(50),
+designation varchar(150),
+salary int,bran_id int ,constraint fk_branchID foreign key (bran_id) references Branches(bran_id)
+);
+
+select * from office_details;
 
 
 
