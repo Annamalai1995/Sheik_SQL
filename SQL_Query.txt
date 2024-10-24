@@ -353,14 +353,36 @@ salary int,bran_id int ,constraint fk_branchID foreign key (bran_id) references 
 select * from office_details;
 
 
+Branch table
+bran_id       place     location
+1                salem      shevapet
+
+2                chennai     Thoraipakkam
 
 
 
 
 
+emp_id     emp_name    designation      salary      branch_id
+1           Annamalai      javadevloper    50000          2
+2           sheik               frontend           150000        2
+ 
 
 
+create table Dmart(cust_id int primary key,cust_name varchar(150));
+create table purchase(cust_id int,pur_id int primary key,pur_no int ,foreign key (cust_id)references Dmart(cust_id));
+insert into Dmart values(1,'Annamalai');
+insert into Dmart values(2,'sheik');
+select * from Dmart;
+insert into purchase values(1,101,1234);
+insert into purchase values(2,102,1235);
 
+select * from purchase;
+insert into purchase values(3,103,1236);
+
+
+delete from Dmart where cust_id=2;
+delete from purchase where cust_id=2;
 
 
 
