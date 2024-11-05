@@ -9,7 +9,7 @@ SQL SYNTAX:
 1.select * from tablename;
 2.select columnname from tablename;
 3.select columnname1,columnname2 from tablename where columnname;
-Ex:
+Ex: 
 select empid,designation from stu where  salary=10000;
 select * from stu where state='Tamilnadu';
 Ex:
@@ -364,7 +364,7 @@ bran_id       place     location
 
 
 emp_id     emp_name    designation      salary      branch_id
-1           Annamalai      javadevloper    50000          2
+1           Annamalai      javadevloper    50000          1
 2           sheik               frontend           150000        2
  
 
@@ -386,9 +386,26 @@ delete from purchase where cust_id=2;
 
 
 
+primary key-duplicate records not allowed
+unique key -
+foreigh key -
+foriegn key link data in one table to another table 
+The table with in the foreign key is called child table
+and the table with primay key is called reference of parent table
 
 
 
+create table office_details(emp_id int primary key auto_increment,emp_name varchar(50) not null,
+designation varchar(150) default "plsassign",
+salary int,pan_card varchar(50) unique,check(salary>50000));
+show index from office_details;
+select * from office_details;
+
+
+create index name_index on office_details(emp_name);
+show index from office_details;
+alter table office_details drop index name_index;
+alter table office_details add index(emp_name);
 
 
 
