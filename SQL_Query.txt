@@ -625,3 +625,44 @@ inner join
 outer join
 Right join
 Left join
+
+
+-- subqueries 
+select * from office_details
+where bran_id=(select bran_id from Branches where bran_name="chennai");
+
+
+select * from office_details where salary=(select min(salary) from office_details);
+
+-- EXISTS
+-- Branches contain atleast one admin
+select bran_id,bran_name from Branches where exists
+ (select * from office_details where designation='admin'
+ and Branches.bran_id=office_details.bran_id);
+
+select * from office_details where designation='admin'
+
+-- ANY
+
+-- salary 1lakh above  using sub query
+
+Select bran_id from office_details where salary>100000;
+
+select * from Branches where bran_id =any(
+Select bran_id from office_details where salary>100000);
+
+-- ALL
+select * from office_details;\
+select * from Branches;
+
+select bran_id from Branches where bran_name IN("chennai","coimbatore");
+
+select * from office_details
+where bran_id <> ALL(select bran_id from Branches where bran_name IN("chennai","coimbatore"));
+
+
+
+
+
+
+
